@@ -1,0 +1,1 @@
+{"name":"cyberlegend","version":"1.0.0","description":"CYBERLEGEND","main":"main.js","scripts":{"start":"electron ."},"devDependencies":{"electron":"^38.8.6"},"allowScripts":{"electron@38.8.6":true},"dependencies":{"systeminformation":"^5.33.15"}}
