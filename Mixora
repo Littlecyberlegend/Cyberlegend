@@ -1,0 +1,2925 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBERLEGEND_</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #030507;
+    color: #e9f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* CYBER GRID */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(0, 220, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 220, 255, .035) 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(0,255,255,.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(130,0,255,.12), transparent 35%);
+    pointer-events: none;
+}
+
+/* NAV */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(3,5,7,.82);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0,220,255,.15);
+}
+
+.logo {
+    color: #00eaff;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-shadow: 0 0 15px rgba(0,234,255,.7);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #8ca3ad;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: #00eaff;
+    text-shadow: 0 0 12px #00eaff;
+}
+
+.nav-contact {
+    padding: 9px 15px;
+    border: 1px solid #00eaff;
+    color: #00eaff !important;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero-inner {
+    max-width: 850px;
+}
+
+.status {
+    color: #00ff9d;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 120px);
+    letter-spacing: 8px;
+    color: #f4fbff;
+    text-shadow:
+        0 0 10px rgba(0,234,255,.7),
+        0 0 45px rgba(0,234,255,.2);
+}
+
+.hero h2 {
+    color: #9f4dff;
+    letter-spacing: 6px;
+    font-size: clamp(14px, 2vw, 22px);
+    margin-top: 5px;
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 25px auto;
+    color: #8296a1;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    margin: 7px;
+    color: #00eaff;
+    border: 1px solid #00eaff;
+    background: rgba(0,234,255,.04);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: #00eaff;
+    color: #020406;
+    box-shadow: 0 0 25px rgba(0,234,255,.4);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: #9f4dff;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    margin-top: 8px;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+/* PROJECTS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 28px;
+    min-height: 210px;
+
+    background: rgba(8,14,19,.82);
+    border: 1px solid rgba(0,234,255,.15);
+
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00eaff;
+    box-shadow: 0 0 25px rgba(0,234,255,.1);
+}
+
+.card-number {
+    color: #9f4dff;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    margin: 20px 0 10px;
+    color: #00eaff;
+}
+
+.card p {
+    color: #80939e;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* TERMINAL */
+
+.terminal {
+    max-width: 950px;
+    margin: auto;
+
+    background: #05090d;
+    border: 1px solid rgba(0,234,255,.3);
+
+    box-shadow:
+        0 0 40px rgba(0,234,255,.06),
+        inset 0 0 50px rgba(0,0,0,.5);
+}
+
+.terminal-bar {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 15px;
+
+    background: #0a1117;
+    border-bottom: 1px solid rgba(0,234,255,.12);
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #53636d;
+}
+
+.terminal-title {
+    margin-left: 8px;
+    color: #607984;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.terminal-screen {
+    padding: 25px;
+    min-height: 350px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-y: auto;
+}
+
+.terminal-line {
+    color: #8ea4ad;
+}
+
+.terminal-line .green {
+    color: #00ff9d;
+}
+
+.terminal-line .cyan {
+    color: #00eaff;
+}
+
+.terminal-line .purple {
+    color: #b45cff;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.prompt {
+    color: #00ff9d;
+    white-space: nowrap;
+}
+
+#terminalInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e9f7ff;
+    font: inherit;
+    min-width: 0;
+}
+
+/* LAB */
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lab {
+    padding: 25px;
+    border: 1px solid rgba(159,77,255,.2);
+    background: rgba(9,7,18,.7);
+}
+
+.lab h3 {
+    color: #b45cff;
+    margin-bottom: 10px;
+}
+
+.lab p {
+    color: #82909a;
+    line-height: 1.6;
+}
+
+/* STORE */
+
+.store {
+    text-align: center;
+    padding: 50px;
+    border: 1px dashed rgba(0,234,255,.25);
+    background: rgba(0,234,255,.02);
+}
+
+.store h2 {
+    color: #00eaff;
+    margin-bottom: 12px;
+}
+
+.store p {
+    color: #81929b;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-box {
+    padding: 25px;
+    border: 1px solid rgba(0,234,255,.16);
+    background: rgba(7,12,16,.8);
+}
+
+.contact-box span {
+    color: #9f4dff;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.contact-box h3 {
+    margin: 12px 0;
+    color: #00eaff;
+}
+
+.contact-box p {
+    color: #8a9aa2;
+    margin-bottom: 15px;
+}
+
+.contact-box a {
+    color: #00eaff;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid rgba(0,234,255,.1);
+    color: #50636c;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .cards,
+    .lab-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+}
+ #bootScreen{position:fixed;inset:0;z-index:9999;background:#020406;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity .8s,visibility .8s}.bootContent{width:min(650px,85%)}.bootSmall{color:#00ff9d;font:11px Consolas;letter-spacing:4px;margin-bottom:20px}.bootLogo{font-size:clamp(45px,9vw,90px);font-weight:900;letter-spacing:6px;color:#f4fbff;text-shadow:0 0 15px #00eaff,0 0 40px #00eaff}.bootLogo span{color:#00eaff}.bootContent>div:nth-child(3){color:#718993;font:12px Consolas;margin:20px}.bootLoader{height:4px;background:#101a20;border:1px solid #18333d}.bootLoader div{height:100%;width:0;background:#00eaff;box-shadow:0 0 15px #00eaff;transition:width .1s}.bootContent>div:last-child{color:#00eaff;font:12px Consolas;margin-top:12px}#bootScreen.hidden{opacity:0;visibility:hidden}
+/* =========================
+   CYBERLEGEND HIDEOUT
+========================= */
+
+.hideout {
+    position: relative;
+    min-height: 600px;
+}
+
+.hideout-box {
+    border: 1px solid rgba(159,77,255,.35);
+    background:
+        radial-gradient(circle at 50% 50%, rgba(159,77,255,.08), transparent 55%),
+        #05070b;
+    padding: 25px;
+    box-shadow: 0 0 45px rgba(159,77,255,.08);
+}
+
+.hideout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,234,255,.12);
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.hideout-header span {
+    color: #00ff9d;
+    font: 11px Consolas, monospace;
+    letter-spacing: 2px;
+}
+
+.hideout-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .8fr;
+    gap: 20px;
+}
+
+.grid-map {
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,234,255,.2);
+    background-image:
+        linear-gradient(rgba(0,234,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,234,255,.08) 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+.grid-map::after {
+    content: "SIMULATED GRID";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgba(0,234,255,.35);
+    font: 10px Consolas;
+    letter-spacing: 3px;
+}
+
+.node {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00eaff;
+    box-shadow: 0 0 18px #00eaff;
+    animation: nodePulse 1.6s infinite alternate;
+}
+
+.node::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 1px;
+    background: rgba(0,234,255,.3);
+    top: 6px;
+    left: 7px;
+    transform: rotate(35deg);
+    transform-origin: left;
+}
+
+.node.one { left: 22%; top: 35%; }
+.node.two { left: 55%; top: 22%; background:#b45cff; box-shadow:0 0 18px #b45cff; }
+.node.three { left: 72%; top: 58%; }
+.node.four { left: 37%; top: 75%; background:#00ff9d; box-shadow:0 0 18px #00ff9d; }
+
+.hideout-panel {
+    padding: 22px;
+    border: 1px solid rgba(159,77,255,.2);
+    background: rgba(159,77,255,.025);
+}
+
+.hideout-panel h3 {
+    color: #b45cff;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.hideout-panel p {
+    color: #7f929d;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.hideout-status {
+    margin-top: 20px;
+    padding: 13px;
+    border: 1px solid rgba(0,255,157,.2);
+    color: #00ff9d;
+    font: 11px Consolas;
+}
+
+.hideout-console {
+    margin-top: 20px;
+    padding: 18px;
+    background: #020405;
+    border: 1px solid #17252c;
+    font: 12px Consolas, monospace;
+    color: #6f8791;
+}
+
+.hideout-console strong {
+    color: #00eaff;
+}
+
+.hideout-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #b45cff;
+    color: #b45cff;
+    cursor: pointer;
+    font: 11px Consolas;
+    letter-spacing: 1px;
+}
+
+.hideout-button:hover {
+    background: #b45cff;
+    color: #05070b;
+    box-shadow: 0 0 20px rgba(180,92,255,.4);
+}
+
+#hideoutMessage {
+    margin-top: 15px;
+    color: #00ff9d;
+    font: 11px Consolas;
+    line-height: 1.7;
+}
+
+@keyframes nodePulse {
+    from { transform: scale(.8); opacity:.65; }
+    to { transform: scale(1.25); opacity:1; }
+}
+
+@media(max-width:800px) {
+    .hideout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   COMMAND CENTER
+========================= */
+
+.command-center {
+    padding-top: 20px;
+}
+
+.command-box {
+    border: 1px solid rgba(0,234,255,.25);
+    background:
+        linear-gradient(145deg, rgba(5,12,17,.96), rgba(4,6,10,.96));
+    box-shadow:
+        0 0 45px rgba(0,234,255,.06),
+        inset 0 0 40px rgba(0,234,255,.015);
+}
+
+.command-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(0,234,255,.12);
+}
+
+.command-top span {
+    font: 11px Consolas, monospace;
+    letter-spacing: 2px;
+    color: #607984;
+}
+
+.command-online {
+    color: #00ff9d !important;
+}
+
+.command-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 1px;
+    background: rgba(0,234,255,.1);
+}
+
+.command-main {
+    padding: 28px;
+    background: #05090d;
+}
+
+.command-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+.command-stat {
+    padding: 18px;
+    border: 1px solid rgba(0,234,255,.12);
+    background: rgba(0,234,255,.02);
+}
+
+.command-stat span {
+    display: block;
+    color: #586e78;
+    font: 10px Consolas, monospace;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.command-stat strong {
+    color: #e9f7ff;
+    font: 18px Consolas, monospace;
+}
+
+.activity-meter {
+    margin-top: 22px;
+    padding: 20px;
+    border: 1px solid rgba(159,77,255,.16);
+}
+
+.activity-title {
+    display: flex;
+    justify-content: space-between;
+    color: #81939c;
+    font: 11px Consolas, monospace;
+    margin-bottom: 12px;
+}
+
+.activity-bar {
+    display: flex;
+    gap: 4px;
+    height: 28px;
+}
+
+.activity-block {
+    flex: 1;
+    background: #122027;
+    transition: .25s;
+}
+
+.activity-block.active {
+    background: #00eaff;
+    box-shadow: 0 0 10px rgba(0,234,255,.45);
+}
+
+.quick-launch {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.quick-launch a {
+    text-align: center;
+    padding: 13px 8px;
+    border: 1px solid rgba(0,234,255,.15);
+    color: #8197a1;
+    text-decoration: none;
+    font: 10px Consolas, monospace;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.quick-launch a:hover {
+    color: #00eaff;
+    border-color: #00eaff;
+    background: rgba(0,234,255,.04);
+}
+
+.activity-log {
+    padding: 28px;
+    background: #030609;
+}
+
+.activity-log h3 {
+    color: #b45cff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.log-entry {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,.035);
+    color: #718792;
+    font: 11px Consolas, monospace;
+}
+
+.log-entry::before {
+    content: "> ";
+    color: #00ff9d;
+}
+
+@media(max-width:850px) {
+    .command-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .command-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-launch {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================
+   COMMAND CENTER
+========================= */
+
+.command-center {
+    padding-top: 20px;
+}
+
+.command-box {
+    border: 1px solid rgba(0,234,255,.25);
+    background:
+        linear-gradient(145deg, rgba(5,12,17,.96), rgba(4,6,10,.96));
+    box-shadow:
+        0 0 45px rgba(0,234,255,.06),
+        inset 0 0 40px rgba(0,234,255,.015);
+}
+
+.command-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(0,234,255,.12);
+}
+
+.command-top span {
+    font: 11px Consolas, monospace;
+    letter-spacing: 2px;
+    color: #607984;
+}
+
+.command-online {
+    color: #00ff9d !important;
+}
+
+.command-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 1px;
+    background: rgba(0,234,255,.1);
+}
+
+.command-main {
+    padding: 28px;
+    background: #05090d;
+}
+
+.command-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+}
+
+.command-stat {
+    padding: 18px;
+    border: 1px solid rgba(0,234,255,.12);
+    background: rgba(0,234,255,.02);
+}
+
+.command-stat span {
+    display: block;
+    color: #586e78;
+    font: 10px Consolas, monospace;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.command-stat strong {
+    color: #e9f7ff;
+    font: 18px Consolas, monospace;
+}
+
+.activity-meter {
+    margin-top: 22px;
+    padding: 20px;
+    border: 1px solid rgba(159,77,255,.16);
+}
+
+.activity-title {
+    display: flex;
+    justify-content: space-between;
+    color: #81939c;
+    font: 11px Consolas, monospace;
+    margin-bottom: 12px;
+}
+
+.activity-bar {
+    display: flex;
+    gap: 4px;
+    height: 28px;
+}
+
+.activity-block {
+    flex: 1;
+    background: #122027;
+    transition: .25s;
+}
+
+.activity-block.active {
+    background: #00eaff;
+    box-shadow: 0 0 10px rgba(0,234,255,.45);
+}
+
+.quick-launch {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.quick-launch a {
+    text-align: center;
+    padding: 13px 8px;
+    border: 1px solid rgba(0,234,255,.15);
+    color: #8197a1;
+    text-decoration: none;
+    font: 10px Consolas, monospace;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.quick-launch a:hover {
+    color: #00eaff;
+    border-color: #00eaff;
+    background: rgba(0,234,255,.04);
+}
+
+.activity-log {
+    padding: 28px;
+    background: #030609;
+}
+
+.activity-log h3 {
+    color: #b45cff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.log-entry {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,.035);
+    color: #718792;
+    font: 11px Consolas, monospace;
+}
+
+.log-entry::before {
+    content: "> ";
+    color: #00ff9d;
+}
+
+@media(max-width:850px) {
+    .command-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .command-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-launch {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+<style>
+.store-section{padding-top:20px}
+.store-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.store-card{padding:25px;min-height:240px;border:1px solid rgba(0,234,255,.2);background:#05090d;display:flex;flex-direction:column}
+.store-card h3{color:#eaf8ff;margin-top:12px}
+.store-card p{color:#718792;font-size:13px;line-height:1.7;margin-top:10px}
+.store-tag{color:#00eaff;font:10px Consolas;letter-spacing:2px}
+.store-icon{width:45px;height:45px;border:1px solid #00eaff;color:#00eaff;display:flex;align-items:center;justify-content:center;font:12px Consolas}
+.store-bottom{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center}
+.store-bottom strong{color:#00ff9d;font:9px Consolas}
+.store-button{border:1px solid #00eaff;background:transparent;color:#00eaff;padding:10px;cursor:pointer;font:10px Consolas}
+.store-button:hover{background:#00eaff;color:#030507}
+@media(max-width:750px){.store-grid{grid-template-columns:1fr}.store-bottom{flex-direction:column;align-items:flex-start;gap:12px}}
+</style><style>
+.cyber-menu-button{display:none;background:transparent;border:1px solid #00eaff;color:#00eaff;padding:9px 12px;font:12px Consolas;cursor:pointer}
+.cyber-menu-button:hover{background:#00eaff;color:#030507}
+@media(max-width:700px){
+.cyber-menu-button{display:block}
+nav{position:relative}
+nav .nav-links{display:none;position:absolute;top:48px;right:0;width:210px;background:#05090d;border:1px solid #00eaff;padding:10px;z-index:9998;box-shadow:0 0 30px rgba(0,234,255,.15)}
+nav .nav-links.mobile-open{display:flex;flex-direction:column;gap:4px}
+nav .nav-links a{display:block;padding:12px;color:#00eaff}
+}
+</style><style>
+.cyber-menu-button{display:none;background:transparent;border:1px solid #00eaff;color:#00eaff;padding:9px 12px;font:12px Consolas;cursor:pointer}
+.cyber-menu-button:hover{background:#00eaff;color:#030507}
+@media(max-width:700px){
+.cyber-menu-button{display:block}
+nav{position:relative}
+nav .nav-links{display:none;position:absolute;top:48px;right:0;width:210px;background:#05090d;border:1px solid #00eaff;padding:10px;z-index:9998;box-shadow:0 0 30px rgba(0,234,255,.15)}
+nav .nav-links.mobile-open{display:flex;flex-direction:column;gap:4px}
+nav .nav-links a{display:block;padding:12px;color:#00eaff}
+}
+</style><style>
+#cyberNotification{
+position:fixed;
+top:80px;
+right:20px;
+width:280px;
+background:#05090d;
+border:1px solid #00eaff;
+padding:16px;
+z-index:18000;
+box-shadow:0 0 30px rgba(0,234,255,.18);
+transform:translateX(340px);
+opacity:0;
+transition:.35s ease;
+pointer-events:none
+}
+#cyberNotification.show{
+transform:translateX(0);
+opacity:1
+}
+#cyberNotificationTitle{
+color:#00eaff;
+font:9px Consolas;
+letter-spacing:2px;
+margin-bottom:8px
+}
+#cyberNotificationText{
+color:#eaf8ff;
+font:12px Consolas;
+line-height:1.6
+}
+</style></head>
+
+<body> 
+ <img src="icon.ico.jpg" alt="Mixora Logo" class="mixora-logo">
+
+<nav>
+    <div class="logo">CYBERLEGEND_</div>
+
+    <div class="nav-links">
+        <a href="#projects">PROJECTS</a>
+        <a href="#lab">LAB</a>
+        <a href="#terminal">TERMINAL</a><a href="#hideout">HIDEOUT</a>
+        <a href="#store">STORE</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+    <a class="nav-contact" href="#contact">CONNECT</a>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="hero-inner">
+
+        <div class="status">● SYSTEM STATUS: ONLINE</div>
+
+        <h1>CYBERLEGEND</h1>
+
+        <h2>ENTER THE DIGITAL GRID</h2>
+
+        <p>
+            A personal digital headquarters for projects, experiments,
+            tools, media and everything being built inside the grid.
+        </p>
+
+        <a href="#projects" class="btn">[ EXPLORE PROJECTS ]</a>
+        <a href="#terminal" class="btn">[ OPEN TERMINAL ]</a>
+
+    </div>
+</header>
+
+
+<!-- COMMAND CENTER -->
+
+<section class="command-center">
+
+    <div class="section-title">
+        <span>// CENTRAL CONTROL</span>
+        <h2>COMMAND CENTER</h2>
+    </div>
+
+    <div class="command-box">
+
+        <div class="command-top">
+            <span>CYBERLEGEND_CORE // SYSTEM MONITOR</span>
+            <span class="command-online">● ONLINE</span>
+        </div>
+
+        <div class="command-grid">
+
+            <div class="command-main">
+
+                <div class="command-stats">
+
+                    <div class="command-stat">
+                        <span>LOCAL TIME</span>
+                        <strong id="liveClock">00:00:00</strong>
+                    </div>
+
+                    <div class="command-stat">
+                        <span>UPTIME</span>
+                        <strong id="systemUptime">00:00:00</strong>
+                    </div>
+
+                    <div class="command-stat">
+                        <span>NETWORK</span>
+                        <strong>SIMULATED</strong>
+                    </div>
+
+                </div>
+
+                <div class="activity-meter">
+
+                    <div class="activity-title">
+                        <span>CORE ACTIVITY</span>
+                        <span id="activityPercent">72%</span>
+                    </div>
+
+                    <div class="activity-bar" id="activityBar"></div>
+
+                </div>
+
+                <div class="quick-launch">
+
+                    <a href="#projects">PROJECTS</a>
+                    <a href="#hideout">HIDEOUT</a>
+                    <a href="#terminal">TERMINAL</a>
+                    <a href="#lab">LAB</a>
+
+                </div>
+
+            </div>
+
+            <div class="activity-log">
+
+                <h3>ACTIVITY LOG</h3>
+
+                <div class="log-entry">
+                    CYBERLEGEND CORE INITIALIZED
+                </div>
+
+                <div class="log-entry">
+                    MIXORA PROJECT DETECTED
+                </div>
+
+                <div class="log-entry">
+                    CYBER LAB ONLINE
+                </div>
+
+                <div class="log-entry">
+                    HIDEOUT SANDBOX CONNECTED
+                </div>
+
+                <div class="log-entry">
+                    TERMINAL READY
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMAND CENTER -->
+
+<section class="command-center">
+
+    <div class="section-title">
+        <span>// CENTRAL CONTROL</span>
+        <h2>COMMAND CENTER</h2>
+    </div>
+
+    <div class="command-box">
+
+        <div class="command-top">
+            <span>CYBERLEGEND_CORE // SYSTEM MONITOR</span>
+            <span class="command-online">● ONLINE</span>
+        </div>
+
+        <div class="command-grid">
+
+            <div class="command-main">
+
+                <div class="command-stats">
+
+                    <div class="command-stat">
+                        <span>LOCAL TIME</span>
+                        <strong id="liveClock">00:00:00</strong>
+                    </div>
+
+                    <div class="command-stat">
+                        <span>UPTIME</span>
+                        <strong id="systemUptime">00:00:00</strong>
+                    </div>
+
+                    <div class="command-stat">
+                        <span>NETWORK</span>
+                        <strong>SIMULATED</strong>
+                    </div>
+
+                </div>
+
+                <div class="activity-meter">
+
+                    <div class="activity-title">
+                        <span>CORE ACTIVITY</span>
+                        <span id="activityPercent">72%</span>
+                    </div>
+
+                    <div class="activity-bar" id="activityBar"></div>
+
+                </div>
+
+                <div class="quick-launch">
+
+                    <a href="#projects">PROJECTS</a>
+                    <a href="#hideout">HIDEOUT</a>
+                    <a href="#terminal">TERMINAL</a>
+                    <a href="#lab">LAB</a>
+
+                </div>
+
+            </div>
+
+            <div class="activity-log">
+
+                <h3>ACTIVITY LOG</h3>
+
+                <div class="log-entry">
+                    CYBERLEGEND CORE INITIALIZED
+                </div>
+
+                <div class="log-entry">
+                    MIXORA PROJECT DETECTED
+                </div>
+
+                <div class="log-entry">
+                    CYBER LAB ONLINE
+                </div>
+
+                <div class="log-entry">
+                    HIDEOUT SANDBOX CONNECTED
+                </div>
+
+                <div class="log-entry">
+                    TERMINAL READY
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-title">
+        <span>// ACTIVE SYSTEMS</span>
+        <h2>PROJECTS</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-number">PROJECT_01</div>
+            <h3>MIXORA</h3>
+            <p>
+                Professional audio control software designed for
+                church media, microphones, mixing and OBS workflows.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">PROJECT_02</div>
+            <h3>WEB LAB</h3>
+            <p>
+                Experimental websites, interfaces and futuristic
+                digital experiences built inside the Cyberlegend grid.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-number">PROJECT_03</div>
+            <h3>UNKNOWN</h3>
+            <p>
+                Classified project currently under development.
+                Access information will be released when ready.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TERMINAL -->
+
+<section id="terminal">
+
+    <div class="section-title">
+        <span>// SYSTEM CONSOLE</span>
+        <h2>TERMINAL</h2>
+    </div>
+
+    <div class="terminal">
+
+        <div class="terminal-bar">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="terminal-title">
+                CYBERLEGEND_TERMINAL // SECURE CONNECTION
+            </div>
+        </div>
+
+        <div class="terminal-screen" id="terminalScreen">
+
+            <div class="terminal-line">
+                <span class="green">CYBERLEGEND OS</span> boot sequence initiated...
+            </div>
+
+            <div class="terminal-line">
+                SYSTEM ........ <span class="green">ONLINE</span>
+            </div>
+
+            <div class="terminal-line">
+                PROJECTS ...... <span class="cyan">ACTIVE</span>
+            </div>
+
+            <div class="terminal-line">
+                LAB ........... <span class="purple">RUNNING</span>
+            </div>
+
+            <div class="terminal-line">
+                STORE ......... <span class="cyan">INITIALIZING</span>
+            </div>
+
+            <div class="terminal-line">
+                Type <span class="cyan">help</span> to see available commands.
+            </div>
+
+            <div class="terminal-input-row">
+                <span class="prompt">cyberlegend@grid:~$</span>
+                <input
+                    id="terminalInput"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autofocus
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HIDEOUT -->
+
+<section id="hideout" class="hideout">
+
+    <div class="section-title">
+        <span>// RESTRICTED AREA</span>
+        <h2>CYBER HIDEOUT</h2>
+    </div>
+
+    <div class="hideout-box">
+
+        <div class="hideout-header">
+            <span>CYBERLEGEND // HIDEOUT_01</span>
+            <span>● SANDBOX ONLINE</span>
+        </div>
+
+        <div class="hideout-grid">
+
+            <div class="grid-map">
+                <div class="node one"></div>
+                <div class="node two"></div>
+                <div class="node three"></div>
+                <div class="node four"></div>
+            </div>
+
+            <div class="hideout-panel">
+
+                <h3>SECRET WORKSTATION</h3>
+
+                <p>
+                    Welcome to the hidden Cyberlegend workspace.
+                    Everything inside this room is a fictional
+                    sandbox for experiments, puzzles and learning.
+                </p>
+
+                <div class="hideout-status">
+                    ● SANDBOX SYSTEM: ONLINE<br>
+                    ● REAL NETWORK ACCESS: DISABLED<br>
+                    ● TRAINING MODE: ACTIVE
+                </div>
+
+                <div class="hideout-console">
+                    <strong>hideout@cyberlegend:~$</strong><br><br>
+                    scanning fictional grid...<br>
+                    nodes detected: 04<br>
+                    security layer: ACTIVE<br>
+                    sandbox: READY
+                </div>
+
+                <button class="hideout-button" id="unlockHideout">
+                    [ RUN SECURITY PUZZLE ]
+                </button>
+
+                <div id="hideoutMessage"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LAB -->
+
+<section id="lab">
+
+    <div class="section-title">
+        <span>// EXPERIMENTAL ZONE</span>
+        <h2>CYBER LAB</h2>
+    </div>
+
+    <div class="lab-grid">
+
+        <div class="lab">
+            <h3>AUDIO LAB</h3>
+            <p>
+                Audio experiments, mixing systems, microphone control
+                and media production tools.
+            </p>
+        </div>
+
+        <div class="lab">
+            <h3>CODE LAB</h3>
+            <p>
+                Websites, applications, automation experiments and
+                new digital systems.
+            </p>
+        </div>
+
+        <div class="lab">
+            <h3>MEDIA LAB</h3>
+            <p>
+                Video, livestreaming, graphics, OBS experiments and
+                creative media projects.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STORE -->
+
+<section id="store">
+
+    <div class="section-title">
+        <span>// DIGITAL MARKET</span>
+        <h2>CYBER STORE</h2>
+    </div>
+
+    <div class="store">
+
+        <h2><div class="store-section">
+  <div class="section-title">
+    <span>// DIGITAL MARKETPLACE</span>
+    <h2>CYBER STORE</h2>
+  </div>
+
+  <div class="store-grid">
+
+    <div class="store-card">
+      <div class="store-icon">01</div>
+      <span class="store-tag">DIGITAL TOOL</span>
+      <h3>CYBER UI KIT</h3>
+      <p>Futuristic interface components and visual elements for digital projects.</p>
+      <div class="store-bottom">
+        <strong>COMING SOON</strong>
+        <button class="store-button">VIEW PRODUCT</button>
+      </div>
+    </div>
+
+    <div class="store-card">
+      <div class="store-icon">02</div>
+      <span class="store-tag">WEB PROJECT</span>
+      <h3>WEB LAB</h3>
+      <p>Experimental web projects, interface concepts and digital experiences.</p>
+      <div class="store-bottom">
+        <strong>COMING SOON</strong>
+        <button class="store-button">VIEW PRODUCT</button>
+      </div>
+    </div>
+
+    <div class="store-card">
+      <div class="store-icon">03</div>
+      <span class="store-tag">MEDIA</span>
+      <h3>MEDIA TOOLS</h3>
+      <p>Useful tools and resources for creators, editors and digital media work.</p>
+      <div class="store-bottom">
+        <strong>COMING SOON</strong>
+        <button class="store-button">VIEW PRODUCT</button>
+      </div>
+    </div>
+
+    <div class="store-card">
+      <div class="store-icon">04</div>
+      <span class="store-tag">PROJECT</span>
+      <h3>MIXORA</h3>
+      <p>Professional audio control software currently under development.</p>
+      <div class="store-bottom">
+        <strong>IN DEVELOPMENT</strong>
+        <button class="store-button">VIEW PROJECT</button>
+      </div>
+    </div>
+
+  </div>
+</div></h2>
+
+        <p>
+            Digital products, tools, templates and services will appear here.
+        </p>
+
+        <br>
+
+        <a href="#contact" class="btn">[ CONTACT CYBERLEGEND ]</a>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-title">
+        <span>// COMMUNICATION CHANNELS</span>
+        <h2>CONTACT</h2>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+
+            <span>CHANNEL_01 / EMAIL</span>
+
+            <h3>GMAIL</h3>
+
+            <p>cyberlegendnew@gmail.com</p>
+
+            <a href="mailto:cyberlegendnew@gmail.com?subject=CYBERLEGEND%20ENQUIRY">
+                [ SEND EMAIL ]
+            </a>
+
+        </div>
+
+        <div class="contact-box">
+
+            <span>CHANNEL_02 / WHATSAPP</span>
+
+            <h3>WHATSAPP</h3>
+
+            <p>+233 56 108 0484</p>
+
+            <a href="https://wa.me/233561080484?text=Hello%20Cyberlegend%2C%20I%20found%20your%20website.">
+                [ OPEN WHATSAPP ]
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    CYBERLEGEND_ // 2026<br><br>
+    CREATE • BUILD • EXPERIMENT
+</footer>
+
+<script>
+
+
+
+
+
+/* =========================
+   CYBERLEGEND TERMINAL
+========================= */
+
+const terminalInput = document.getElementById("terminalInput");
+const terminalScreen = document.getElementById("terminalScreen");
+
+function addTerminalLine(text, className = "") {
+
+    const line = document.createElement("div");
+
+    line.className = "terminal-line";
+
+    if (className) {
+        line.innerHTML = `<span class="${className}">${text}</span>`;
+    } else {
+        line.textContent = text;
+    }
+
+    terminalScreen.insertBefore(
+        line,
+        document.querySelector(".terminal-input-row")
+    );
+}
+
+function runCommand(command) {
+
+    const cmd = command.trim().toLowerCase();
+
+    if (!cmd) return;
+
+    addTerminalLine("cyberlegend@grid:~$ " + command);
+
+    switch (cmd) {
+
+        case "help":
+
+            addTerminalLine("AVAILABLE COMMANDS:");
+            addTerminalLine("  help      - show this command list");
+            addTerminalLine("  status    - system status");
+            addTerminalLine("  whoami    - identify the operator");
+            addTerminalLine("  projects  - show active projects");
+            addTerminalLine("  mixora    - show Mixora information");
+            addTerminalLine("  about     - about Cyberlegend");
+            addTerminalLine("  tools     - show Cyber Lab");
+            addTerminalLine("  store     - store status");
+            addTerminalLine("  contact   - communication channels");
+            addTerminalLine("  clear     - clear terminal");
+            break;
+
+        case "status":
+
+            addTerminalLine("SYSTEM ........ ONLINE");
+            addTerminalLine("NETWORK ....... READY");
+            addTerminalLine("PROJECTS ...... ACTIVE");
+            addTerminalLine("CYBER LAB ...... RUNNING");
+            addTerminalLine("STORE .......... INITIALIZING");
+            break;
+
+        case "whoami":
+
+            addTerminalLine("OPERATOR: CYBERLEGEND", "cyan");
+            addTerminalLine("ROLE: CREATOR / BUILDER / EXPERIMENTER");
+            break;
+
+        case "projects":
+
+            addTerminalLine("ACTIVE PROJECTS:");
+            addTerminalLine("01. MIXORA");
+            addTerminalLine("02. WEB LAB");
+            addTerminalLine("03. UNKNOWN / CLASSIFIED");
+            break;
+
+        case "mixora":
+
+            addTerminalLine("MIXORA");
+            addTerminalLine("Professional church media and audio control system.");
+            addTerminalLine("STATUS: DEVELOPMENT");
+            break;
+
+        case "about":
+
+            addTerminalLine("CYBERLEGEND");
+            addTerminalLine("A digital headquarters for building, creating and experimenting.");
+            break;
+
+        case "tools":
+
+            addTerminalLine("CYBER LAB:");
+            addTerminalLine("AUDIO LAB");
+            addTerminalLine("CODE LAB");
+            addTerminalLine("MEDIA LAB");
+            break;
+
+        case "store":
+
+            addTerminalLine("CYBER STORE");
+            addTerminalLine("STATUS: INITIALIZING");
+            addTerminalLine("DIGITAL PRODUCTS: COMING SOON");
+            break;
+
+        case "contact":
+
+            addTerminalLine("EMAIL: cyberlegendnew@gmail.com");
+            addTerminalLine("WHATSAPP: +233 56 108 0484");
+            break;
+
+        case "clear":
+
+            document.querySelectorAll(".terminal-line").forEach(line => {
+                line.remove();
+            });
+
+            break;
+
+        default:
+
+            addTerminalLine(
+                "COMMAND NOT FOUND: " + command
+            );
+
+            addTerminalLine(
+                "Type 'help' for available commands."
+            );
+
+    }
+
+    terminalInput.value = "";
+
+    terminalScreen.scrollTop = terminalScreen.scrollHeight;
+}
+
+terminalInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        runCommand(terminalInput.value);
+
+    }
+
+});
+
+</script>
+
+<script>
+
+
+
+let p=0;let b=document.getElementById("bootProgress"),n=document.getElementById("bootPercent"),s=document.getElementById("bootStatus");let msgs=["ESTABLISHING CONNECTION...","LOADING CYBER SYSTEMS...","CONNECTING PROJECT DATABASE...","INITIALIZING CYBER LAB...","STARTING DIGITAL GRID...","SYSTEM READY."];let t=setInterval(()=>{p+=Math.floor(Math.random()*7)+3;if(p>100)p=100;b.style.width=p+"%";n.textContent=p;s.textContent=msgs[Math.min(Math.floor(p/18),5)];if(p>=100){clearInterval(t);setTimeout(()=>document.getElementById("bootScreen").classList.add("hidden"),700)}},100);</script>
+<script>
+
+
+
+
+const hideoutButton = document.getElementById("unlockHideout");
+const hideoutMessage = document.getElementById("hideoutMessage");
+
+hideoutButton.addEventListener("click", function() {
+
+    const answer = prompt(
+        "CYBERLEGEND SECURITY PUZZLE\n\n" +
+        "A fictional access code is hidden in this sequence:\n\n" +
+        "02 - 04 - 08 - 16 - ?\n\n" +
+        "Enter the next number:"
+    );
+
+    if (answer === "32") {
+
+        hideoutMessage.innerHTML =
+            "ACCESS GRANTED.<br>" +
+            "TRAINING NODE UNLOCKED.<br>" +
+            "WELCOME TO THE HIDEOUT.";
+
+        hideoutMessage.style.color = "#00ff9d";
+
+    } else if (answer !== null) {
+
+        hideoutMessage.innerHTML =
+            "ACCESS DENIED.<br>" +
+            "Hint: the number doubles each time.";
+
+        hideoutMessage.style.color = "#ff5577";
+    }
+
+});
+</script>
+<script>
+/* COMMAND CENTER */
+
+const bootTime = Date.now();
+
+function updateCommandCenter() {
+
+    const now = new Date();
+
+    const time =
+        now.getHours().toString().padStart(2,"0") + ":" +
+        now.getMinutes().toString().padStart(2,"0") + ":" +
+        now.getSeconds().toString().padStart(2,"0");
+
+    const clock = document.getElementById("liveClock");
+
+    if (clock) {
+        clock.textContent = time;
+    }
+
+    const elapsed =
+        Math.floor((Date.now() - bootTime) / 1000);
+
+    const hours = Math.floor(elapsed / 3600);
+    const minutes = Math.floor((elapsed % 3600) / 60);
+    const seconds = elapsed % 60;
+
+    const uptime = document.getElementById("systemUptime");
+
+    if (uptime) {
+        uptime.textContent =
+            String(hours).padStart(2,"0") + ":" +
+            String(minutes).padStart(2,"0") + ":" +
+            String(seconds).padStart(2,"0");
+    }
+}
+
+setInterval(updateCommandCenter,1000);
+updateCommandCenter();
+
+const activityBar = document.getElementById("activityBar");
+const activityPercent = document.getElementById("activityPercent");
+
+if (activityBar) {
+
+    for (let i = 0; i < 12; i++) {
+        const block = document.createElement("div");
+        block.className = "activity-block";
+        activityBar.appendChild(block);
+    }
+
+    function updateActivity() {
+
+        const value = Math.floor(Math.random() * 35) + 55;
+
+        activityPercent.textContent = value + "%";
+
+        const active = Math.round((value / 100) * 12);
+        const blocks = activityBar.children;
+
+        for (let i = 0; i < blocks.length; i++) {
+            blocks[i].classList.toggle("active", i < active);
+        }
+    }
+
+    updateActivity();
+    setInterval(updateActivity,1800);
+}
+</script><div id="storeModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(560px,100%);background:#05090d;border:1px solid #00eaff;box-shadow:0 0 40px rgba(0,234,255,.18);padding:30px;position:relative">
+    <button onclick="closeStoreModal()" style="position:absolute;right:15px;top:15px;background:none;border:1px solid #00eaff;color:#00eaff;padding:6px 10px;cursor:pointer">X</button>
+    <div style="color:#00eaff;font:10px Consolas;letter-spacing:3px;margin-bottom:15px">// CYBER STORE</div>
+    <h2 id="storeModalTitle" style="color:#eaf8ff;margin-bottom:12px">PRODUCT</h2>
+    <p id="storeModalText" style="color:#718792;line-height:1.7;font-size:14px">Product information.</p>
+    <div style="margin-top:25px;color:#00ff9d;font:11px Consolas">STATUS: COMING SOON</div>
+  </div>
+</div><script>
+function openStoreModal(title,text){
+  document.getElementById("storeModalTitle").textContent=title;
+  document.getElementById("storeModalText").textContent=text;
+  document.getElementById("storeModal").style.display="flex";
+}
+function closeStoreModal(){
+  document.getElementById("storeModal").style.display="none";
+}
+document.addEventListener("click",function(e){
+  if(e.target.classList.contains("store-button")){
+    var card=e.target.closest(".store-card");
+    var title=card.querySelector("h3").textContent;
+    var text=card.querySelector("p").textContent;
+    openStoreModal(title,text);
+  }
+});
+</script><section id="tools" class="tools-section">
+  <div class="section-title">
+    <span>// DIGITAL UTILITIES</span>
+    <h2>CYBER TOOLS</h2>
+  </div>
+
+  <div class="tools-grid">
+
+    <div class="tool-card">
+      <div class="tool-icon">01</div>
+      <span class="tool-tag">UTILITY</span>
+      <h3>CALCULATOR</h3>
+      <p>Quick calculations inside the CYBERLEGEND command center.</p>
+      <button class="tool-button">OPEN TOOL →</button>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-icon">02</div>
+      <span class="tool-tag">SECURITY</span>
+      <h3>PASSWORD GENERATOR</h3>
+      <p>Generate strong random passwords for your projects.</p>
+      <button class="tool-button">OPEN TOOL →</button>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-icon">03</div>
+      <span class="tool-tag">DESIGN</span>
+      <h3>COLOR LAB</h3>
+      <p>Generate colors and explore futuristic interface palettes.</p>
+      <button class="tool-button">OPEN TOOL →</button>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-icon">04</div>
+      <span class="tool-tag">TEXT</span>
+      <h3>TEXT LAB</h3>
+      <p>Useful text utilities for creators and developers.</p>
+      <button class="tool-button">OPEN TOOL →</button>
+    </div>
+
+  </div>
+</section><style>
+.tools-section{padding-top:20px}
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.tool-card{padding:25px;min-height:230px;border:1px solid rgba(0,234,255,.18);background:#05090d;display:flex;flex-direction:column}
+.tool-icon{width:45px;height:45px;border:1px solid #00eaff;color:#00eaff;display:flex;align-items:center;justify-content:center;font:12px Consolas;margin-bottom:15px}
+.tool-tag{color:#00eaff;font:10px Consolas;letter-spacing:2px}
+.tool-card h3{color:#eaf8ff;margin-top:12px}
+.tool-card p{color:#718792;font-size:13px;line-height:1.7;margin-top:10px}
+.tool-button{margin-top:auto;padding:10px;border:1px solid #00eaff;background:transparent;color:#00eaff;cursor:pointer;font:10px Consolas}
+.tool-button:hover{background:#00eaff;color:#030507}
+@media(max-width:750px){.tools-grid{grid-template-columns:1fr}}
+</style><script>
+document.addEventListener("click",function(e){
+  if(!e.target.classList.contains("tool-button")) return;
+
+  var card=e.target.closest(".tool-card");
+  var tool=card.querySelector("h3").textContent.trim();
+
+  if(tool==="CALCULATOR"){
+    var expression=prompt("CYBER CALCULATOR\n\nEnter a calculation:");
+    if(expression===null || expression.trim()==="") return;
+
+    try{
+      var result=Function("return ("+expression+")")();
+      alert("CYBER CALCULATOR\n\nRESULT: "+result);
+    }catch(error){
+      alert("INVALID CALCULATION");
+    }
+  }
+
+  if(tool==="PASSWORD GENERATOR"){
+    var chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    var password="";
+    for(var i=0;i<16;i++){
+      password+=chars.charAt(Math.floor(Math.random()*chars.length));
+    }
+    alert("PASSWORD GENERATOR\n\n"+password);
+  }
+
+  if(tool==="COLOR LAB"){
+    var color="#"+Math.floor(Math.random()*16777215).toString(16).padStart(6,"0");
+    alert("COLOR LAB\n\nGENERATED COLOR: "+color);
+  }
+
+  if(tool==="TEXT LAB"){
+    var text=prompt("TEXT LAB\n\nEnter text:");
+    if(text===null) return;
+    alert("CHARACTERS: "+text.length+"\n\nWORDS: "+(text.trim()===""?0:text.trim().split(/\s+/).length));
+  }
+});
+</script><div id="calculatorPanel" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(360px,100%);background:#05090d;border:1px solid #00eaff;box-shadow:0 0 45px rgba(0,234,255,.2);padding:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <span style="color:#00eaff;font:11px Consolas;letter-spacing:2px">CYBER CALCULATOR</span>
+      <button onclick="closeCalculator()" style="background:none;border:1px solid #00eaff;color:#00eaff;padding:5px 9px;cursor:pointer">X</button>
+    </div>
+
+    <input id="calcDisplay" readonly style="width:100%;box-sizing:border-box;background:#020507;border:1px solid #263b44;color:#00ff9d;padding:14px;font:18px Consolas;text-align:right;margin-bottom:12px">
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px">
+      <button onclick="calcClear()">C</button>
+      <button onclick="calcAdd('/')">÷</button>
+      <button onclick="calcAdd('*')">×</button>
+      <button onclick="calcBack()">⌫</button>
+
+      <button onclick="calcAdd('7')">7</button>
+      <button onclick="calcAdd('8')">8</button>
+      <button onclick="calcAdd('9')">9</button>
+      <button onclick="calcAdd('-')">−</button>
+
+      <button onclick="calcAdd('4')">4</button>
+      <button onclick="calcAdd('5')">5</button>
+      <button onclick="calcAdd('6')">6</button>
+      <button onclick="calcAdd('+')">+</button>
+
+      <button onclick="calcAdd('1')">1</button>
+      <button onclick="calcAdd('2')">2</button>
+      <button onclick="calcAdd('3')">3</button>
+      <button onclick="calcSolve()">=</button>
+
+      <button onclick="calcAdd('0')" style="grid-column:span 2">0</button>
+      <button onclick="calcAdd('.')">.</button>
+    </div>
+  </div>
+</div><script>
+function openCalculator(){
+  document.getElementById("calculatorPanel").style.display="flex";
+  document.getElementById("calcDisplay").value="";
+}
+function closeCalculator(){
+  document.getElementById("calculatorPanel").style.display="none";
+}
+function calcAdd(value){
+  document.getElementById("calcDisplay").value+=value;
+}
+function calcClear(){
+  document.getElementById("calcDisplay").value="";
+}
+function calcBack(){
+  var d=document.getElementById("calcDisplay");
+  d.value=d.value.slice(0,-1);
+}
+function calcSolve(){
+  var d=document.getElementById("calcDisplay");
+  try{
+    if(!/^[0-9+\-*/.() ]+$/.test(d.value)) throw new Error();
+    d.value=Function("return "+d.value)();
+  }catch(e){
+    d.value="ERROR";
+  }
+}
+document.addEventListener("click",function(e){
+  if(!e.target.classList.contains("tool-button")) return;
+  var card=e.target.closest(".tool-card");
+  if(card && card.querySelector("h3").textContent.trim()==="CALCULATOR"){
+    openCalculator();
+  }
+});
+</script><div id="passwordPanel" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(500px,100%);background:#05090d;border:1px solid #00eaff;box-shadow:0 0 45px rgba(0,234,255,.2);padding:28px">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+      <span style="color:#00eaff;font:11px Consolas;letter-spacing:2px">PASSWORD GENERATOR</span>
+      <button onclick="closePassword()" style="background:none;border:1px solid #00eaff;color:#00eaff;padding:5px 9px;cursor:pointer">X</button>
+    </div>
+
+    <div style="color:#718792;font:10px Consolas;letter-spacing:2px;margin-bottom:8px">GENERATED PASSWORD</div>
+
+    <div style="display:flex;gap:8px">
+      <input id="passwordDisplay" readonly style="flex:1;min-width:0;background:#020507;border:1px solid #263b44;color:#00ff9d;padding:14px;font:15px Consolas">
+      <button onclick="copyPassword()" style="border:1px solid #00eaff;background:transparent;color:#00eaff;padding:10px;cursor:pointer">COPY</button>
+    </div>
+
+    <div style="margin-top:18px">
+      <div style="color:#718792;font:10px Consolas;margin-bottom:7px">PASSWORD LENGTH</div>
+      <input id="passwordLength" type="range" min="8" max="32" value="16" style="width:100%" oninput="generatePassword()">
+      <div id="passwordLengthValue" style="color:#00eaff;font:11px Consolas;margin-top:6px">16 CHARACTERS</div>
+    </div>
+
+    <button onclick="generatePassword()" style="width:100%;margin-top:20px;border:1px solid #00eaff;background:transparent;color:#00eaff;padding:12px;cursor:pointer;font:11px Consolas;letter-spacing:2px">
+      GENERATE NEW PASSWORD
+    </button>
+
+    <div id="passwordStatus" style="margin-top:18px;color:#00ff9d;font:10px Consolas;letter-spacing:2px">
+      STATUS: READY
+    </div>
+
+  </div>
+</div><script>
+function openPassword(){
+  document.getElementById("passwordPanel").style.display="flex";
+  generatePassword();
+}
+function closePassword(){
+  document.getElementById("passwordPanel").style.display="none";
+}
+function generatePassword(){
+  var length=parseInt(document.getElementById("passwordLength").value);
+  var chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+  var password="";
+  var array=new Uint32Array(length);
+  crypto.getRandomValues(array);
+  for(var i=0;i<length;i++){
+    password+=chars[array[i]%chars.length];
+  }
+  document.getElementById("passwordDisplay").value=password;
+  document.getElementById("passwordLengthValue").textContent=length+" CHARACTERS";
+  document.getElementById("passwordStatus").textContent="STATUS: PASSWORD GENERATED";
+}
+function copyPassword(){
+  var text=document.getElementById("passwordDisplay").value;
+  navigator.clipboard.writeText(text).then(function(){
+    document.getElementById("passwordStatus").textContent="STATUS: COPIED TO CLIPBOARD";
+  });
+}
+document.addEventListener("click",function(e){
+  if(!e.target.classList.contains("tool-button")) return;
+  var card=e.target.closest(".tool-card");
+  if(card && card.querySelector("h3").textContent.trim()==="PASSWORD GENERATOR"){
+    openPassword();
+  }
+});
+</script><div id="colorPanel" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(430px,100%);background:#05090d;border:1px solid #00eaff;box-shadow:0 0 45px rgba(0,234,255,.2);padding:28px">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+      <span style="color:#00eaff;font:11px Consolas;letter-spacing:2px">CYBER COLOR LAB</span>
+      <button onclick="closeColor()" style="background:none;border:1px solid #00eaff;color:#00eaff;padding:5px 9px;cursor:pointer">X</button>
+    </div>
+
+    <div id="colorPreview" style="height:170px;border:1px solid #263b44;background:#00eaff;box-shadow:0 0 30px rgba(0,234,255,.2)"></div>
+
+    <div style="margin-top:20px;color:#718792;font:10px Consolas;letter-spacing:2px">HEX COLOR</div>
+
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <input id="colorValue" readonly style="flex:1;background:#020507;border:1px solid #263b44;color:#00ff9d;padding:14px;font:16px Consolas">
+      <button onclick="copyColor()" style="border:1px solid #00eaff;background:transparent;color:#00eaff;padding:10px;cursor:pointer">COPY</button>
+    </div>
+
+    <button onclick="generateColor()" style="width:100%;margin-top:18px;border:1px solid #00eaff;background:transparent;color:#00eaff;padding:12px;cursor:pointer;font:11px Consolas;letter-spacing:2px">
+      GENERATE NEW COLOR
+    </button>
+
+    <div id="colorStatus" style="margin-top:18px;color:#00ff9d;font:10px Consolas;letter-spacing:2px">
+      STATUS: READY
+    </div>
+
+  </div>
+</div><script>
+function openColor(){
+  document.getElementById("colorPanel").style.display="flex";
+  generateColor();
+}
+function closeColor(){
+  document.getElementById("colorPanel").style.display="none";
+}
+function generateColor(){
+  var color="#"+Math.floor(Math.random()*16777216).toString(16).padStart(6,"0").toUpperCase();
+  document.getElementById("colorPreview").style.background=color;
+  document.getElementById("colorValue").value=color;
+  document.getElementById("colorStatus").textContent="STATUS: COLOR GENERATED";
+}
+function copyColor(){
+  var text=document.getElementById("colorValue").value;
+  navigator.clipboard.writeText(text).then(function(){
+    document.getElementById("colorStatus").textContent="STATUS: COPIED TO CLIPBOARD";
+  });
+}
+document.addEventListener("click",function(e){
+  if(!e.target.classList.contains("tool-button")) return;
+  var card=e.target.closest(".tool-card");
+  if(card && card.querySelector("h3").textContent.trim()==="COLOR LAB"){
+    openColor();
+  }
+});
+</script><div id="textPanel" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(620px,100%);background:#05090d;border:1px solid #00eaff;box-shadow:0 0 45px rgba(0,234,255,.2);padding:28px">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <span style="color:#00eaff;font:11px Consolas;letter-spacing:2px">CYBER TEXT LAB</span>
+      <button onclick="closeText()" style="background:none;border:1px solid #00eaff;color:#00eaff;padding:5px 9px;cursor:pointer">X</button>
+    </div>
+
+    <textarea id="textInput" placeholder="ENTER TEXT..." oninput="updateTextStats()" style="width:100%;height:170px;box-sizing:border-box;background:#020507;border:1px solid #263b44;color:#eaf8ff;padding:14px;font:14px Consolas;resize:vertical"></textarea>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px">
+      <div style="border:1px solid #263b44;padding:12px">
+        <div style="color:#718792;font:9px Consolas">CHARACTERS</div>
+        <div id="charCount" style="color:#00ff9d;font:18px Consolas;margin-top:5px">0</div>
+      </div>
+
+      <div style="border:1px solid #263b44;padding:12px">
+        <div style="color:#718792;font:9px Consolas">WORDS</div>
+        <div id="wordCount" style="color:#00ff9d;font:18px Consolas;margin-top:5px">0</div>
+      </div>
+
+      <div style="border:1px solid #263b44;padding:12px">
+        <div style="color:#718792;font:9px Consolas">LINES</div>
+        <div id="lineCount" style="color:#00ff9d;font:18px Consolas;margin-top:5px">0</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
+      <button onclick="textUpper()" style="flex:1;border:1px solid #00eaff;background:transparent;color:#00eaff;padding:11px;cursor:pointer;font:10px Consolas">UPPERCASE</button>
+      <button onclick="textLower()" style="flex:1;border:1px solid #00eaff;background:transparent;color:#00eaff;padding:11px;cursor:pointer;font:10px Consolas">LOWERCASE</button>
+      <button onclick="copyText()" style="flex:1;border:1px solid #00eaff;background:transparent;color:#00eaff;padding:11px;cursor:pointer;font:10px Consolas">COPY</button>
+      <button onclick="clearText()" style="flex:1;border:1px solid #ff5577;background:transparent;color:#ff5577;padding:11px;cursor:pointer;font:10px Consolas">CLEAR</button>
+    </div>
+
+    <div id="textStatus" style="margin-top:18px;color:#00ff9d;font:10px Consolas;letter-spacing:2px">
+      STATUS: READY
+    </div>
+
+  </div>
+</div><script>
+function openText(){
+  document.getElementById("textPanel").style.display="flex";
+  updateTextStats();
+}
+function closeText(){
+  document.getElementById("textPanel").style.display="none";
+}
+function updateTextStats(){
+  var text=document.getElementById("textInput").value;
+  var words=text.trim()===""?0:text.trim().split(/\s+/).length;
+  var lines=text===""?0:text.split(/\n/).length;
+
+  document.getElementById("charCount").textContent=text.length;
+  document.getElementById("wordCount").textContent=words;
+  document.getElementById("lineCount").textContent=lines;
+}
+function textUpper(){
+  var input=document.getElementById("textInput");
+  input.value=input.value.toUpperCase();
+  updateTextStats();
+}
+function textLower(){
+  var input=document.getElementById("textInput");
+  input.value=input.value.toLowerCase();
+  updateTextStats();
+}
+function copyText(){
+  var text=document.getElementById("textInput").value;
+  navigator.clipboard.writeText(text).then(function(){
+    document.getElementById("textStatus").textContent="STATUS: COPIED TO CLIPBOARD";
+  });
+}
+function clearText(){
+  document.getElementById("textInput").value="";
+  updateTextStats();
+  document.getElementById("textStatus").textContent="STATUS: CLEARED";
+}
+document.addEventListener("click",function(e){
+  if(!e.target.classList.contains("tool-button")) return;
+  var card=e.target.closest(".tool-card");
+  if(card && card.querySelector("h3").textContent.trim()==="TEXT LAB"){
+    openText();
+  }
+});
+</script><section id="about" class="about-section">
+  <div class="section-title">
+    <span>// SYSTEM IDENTITY</span>
+    <h2>CYBERLEGEND</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-main">
+      <div class="about-badge">● CREATOR PROFILE</div>
+
+      <h3>BUILDING IN THE DIGITAL GRID.</h3>
+
+      <p>
+        CYBERLEGEND is a personal digital headquarters for experiments,
+        software projects, creative tools and ideas.
+      </p>
+
+      <p>
+        From audio software to web experiments, every project is built
+        to learn, create and push into something new.
+      </p>
+
+      <div class="about-mission">
+        <span>MISSION</span>
+        <strong>CREATE • BUILD • EXPERIMENT</strong>
+      </div>
+    </div>
+
+    <div class="about-status">
+
+      <div class="status-row">
+        <span>CREATOR</span>
+        <strong>CYBERLEGEND</strong>
+      </div>
+
+      <div class="status-row">
+        <span>SYSTEM STATUS</span>
+        <strong class="online">ONLINE</strong>
+      </div>
+
+      <div class="status-row">
+        <span>PRIMARY FIELD</span>
+        <strong>DIGITAL CREATION</strong>
+      </div>
+
+      <div class="status-row">
+        <span>ACTIVE PROJECT</span>
+        <strong>MIXORA</strong>
+      </div>
+
+      <div class="status-row">
+        <span>LAB STATUS</span>
+        <strong>EXPERIMENTAL</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="about-timeline">
+
+    <div class="timeline-item">
+      <span>01</span>
+      <div>
+        <strong>IDEA</strong>
+        <p>Find something worth building.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span>02</span>
+      <div>
+        <strong>BUILD</strong>
+        <p>Turn the idea into a working system.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span>03</span>
+      <div>
+        <strong>EXPERIMENT</strong>
+        <p>Test, improve and discover what comes next.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span>04</span>
+      <div>
+        <strong>RELEASE</strong>
+        <p>Put the finished creation into the world.</p>
+      </div>
+    </div>
+
+  </div>
+</section><style>
+.about-section{padding-top:20px}
+.about-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:18px}
+.about-main,.about-status{background:#05090d;border:1px solid rgba(0,234,255,.18);padding:28px}
+.about-badge{color:#00eaff;font:10px Consolas;letter-spacing:2px;margin-bottom:20px}
+.about-main h3{color:#eaf8ff;font-size:25px;letter-spacing:2px;margin-bottom:18px}
+.about-main p{color:#718792;font-size:14px;line-height:1.8;margin-top:12px}
+.about-mission{margin-top:25px;padding:16px;border-left:2px solid #00eaff;background:rgba(0,234,255,.03)}
+.about-mission span{display:block;color:#718792;font:9px Consolas;letter-spacing:2px;margin-bottom:8px}
+.about-mission strong{color:#00ff9d;font:12px Consolas;letter-spacing:1px}
+.status-row{display:flex;justify-content:space-between;gap:15px;padding:17px 0;border-bottom:1px solid #16242b}
+.status-row:last-child{border-bottom:none}
+.status-row span{color:#718792;font:9px Consolas;letter-spacing:1px}
+.status-row strong{color:#eaf8ff;font:10px Consolas;text-align:right}
+.status-row .online{color:#00ff9d}
+.about-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.timeline-item{background:#05090d;border:1px solid rgba(0,234,255,.14);padding:20px}
+.timeline-item>span{color:#00eaff;font:10px Consolas}
+.timeline-item strong{display:block;color:#eaf8ff;font:12px Consolas;letter-spacing:2px;margin-top:12px}
+.timeline-item p{color:#718792;font-size:12px;line-height:1.6;margin-top:8px}
+@media(max-width:800px){
+.about-grid{grid-template-columns:1fr}
+.about-timeline{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+.about-timeline{grid-template-columns:1fr}
+.about-main h3{font-size:20px}
+}
+</style><section id="connect" class="connect-section">
+  <div class="section-title">
+    <span>// COMMUNICATION CHANNEL</span>
+    <h2>CONNECT</h2>
+  </div>
+
+  <div class="connect-grid">
+
+    <div class="connect-main">
+      <div class="connect-status">● CHANNELS ONLINE</div>
+
+      <h3>OPEN A CONNECTION.</h3>
+
+      <p>
+        Have a project, idea or question? Choose a communication channel
+        and start a transmission.
+      </p>
+
+      <div class="connect-actions">
+        <a class="connect-button" href="mailto:cyberlegendnew@gmail.com?subject=CYBERLEGEND%20ENQUIRY">
+          EMAIL TRANSMISSION →
+        </a>
+
+        <a class="connect-button" href="https://wa.me/233561080484?text=Hello%20Cyberlegend%2C%20I%20found%20your%20website." target="_blank">
+          WHATSAPP CHANNEL →
+        </a>
+      </div>
+    </div>
+
+    <div class="connect-info">
+
+      <div class="connect-row">
+        <span>EMAIL</span>
+        <strong>cyberlegendnew@gmail.com</strong>
+      </div>
+
+      <div class="connect-row">
+        <span>WHATSAPP</span>
+        <strong>+233 56 108 0484</strong>
+      </div>
+
+      <div class="connect-row">
+        <span>CHANNEL STATUS</span>
+        <strong class="online">AVAILABLE</strong>
+      </div>
+
+      <div class="connect-row">
+        <span>RESPONSE MODE</span>
+        <strong>DIRECT</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="transmission-box">
+    <span>CYBERLEGEND_TERMINAL</span>
+    <p>&gt; communication link initialized...</p>
+    <p>&gt; secure channel ready.</p>
+    <p>&gt; waiting for transmission...</p>
+    <div class="cursor-line">_</div>
+  </div>
+</section><style>
+.connect-section{padding-top:20px}
+.connect-grid{display:grid;grid-template-columns:1.3fr .8fr;gap:18px}
+.connect-main,.connect-info{background:#05090d;border:1px solid rgba(0,234,255,.18);padding:28px}
+.connect-status{color:#00ff9d;font:10px Consolas;letter-spacing:2px;margin-bottom:20px}
+.connect-main h3{color:#eaf8ff;font-size:25px;letter-spacing:2px;margin-bottom:15px}
+.connect-main p{color:#718792;font-size:14px;line-height:1.8}
+.connect-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.connect-button{display:inline-block;padding:13px 16px;border:1px solid #00eaff;color:#00eaff;text-decoration:none;font:10px Consolas;letter-spacing:1px;transition:.2s}
+.connect-button:hover{background:#00eaff;color:#030507}
+.connect-row{display:flex;flex-direction:column;gap:7px;padding:17px 0;border-bottom:1px solid #16242b}
+.connect-row:last-child{border-bottom:none}
+.connect-row span{color:#718792;font:9px Consolas;letter-spacing:1px}
+.connect-row strong{color:#eaf8ff;font:11px Consolas;word-break:break-word}
+.connect-row .online{color:#00ff9d}
+.transmission-box{margin-top:18px;background:#020507;border:1px solid rgba(0,234,255,.12);padding:20px;font:11px Consolas;line-height:1.9}
+.transmission-box>span{color:#00eaff}
+.transmission-box p{color:#718792}
+.cursor-line{color:#00ff9d;animation:cyberblink 1s infinite}
+@keyframes cyberblink{0%,50%{opacity:1}51%,100%{opacity:0}}
+@media(max-width:800px){.connect-grid{grid-template-columns:1fr}.connect-actions{flex-direction:column}.connect-button{text-align:center}}
+</style><script>
+document.addEventListener("DOMContentLoaded",function(){
+  var nav=document.querySelector("nav");
+  if(!nav) return;
+
+  var links=nav.querySelector(".nav-links");
+
+  if(!links){
+    links=document.createElement("div");
+    links.className="nav-links";
+
+    Array.from(nav.querySelectorAll("a")).forEach(function(a){
+      links.appendChild(a);
+    });
+
+    nav.appendChild(links);
+  }
+
+  var button=document.createElement("button");
+  button.className="cyber-menu-button";
+  button.textContent="☰ MENU";
+
+  nav.insertBefore(button,links);
+
+  button.addEventListener("click",function(){
+    links.classList.toggle("mobile-open");
+  });
+
+  links.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click",function(){
+      links.classList.remove("mobile-open");
+    });
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded",function(){
+  var nav=document.querySelector("nav");
+  if(!nav) return;
+
+  var links=nav.querySelector(".nav-links");
+
+  if(!links){
+    links=document.createElement("div");
+    links.className="nav-links";
+
+    Array.from(nav.querySelectorAll("a")).forEach(function(a){
+      links.appendChild(a);
+    });
+
+    nav.appendChild(links);
+  }
+
+  var button=document.createElement("button");
+  button.className="cyber-menu-button";
+  button.textContent="☰ MENU";
+
+  nav.insertBefore(button,links);
+
+  button.addEventListener("click",function(){
+    links.classList.toggle("mobile-open");
+  });
+
+  links.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click",function(){
+      links.classList.remove("mobile-open");
+    });
+  });
+});
+</script><div id="cyberSearch" style="position:fixed;top:15px;left:50%;transform:translateX(-50%);z-index:15000;width:min(520px,80%);display:flex;gap:6px">
+  <input id="cyberSearchInput" type="text" placeholder="SEARCH CYBERLEGEND..." style="flex:1;background:#05090d;border:1px solid #00eaff;color:#eaf8ff;padding:11px 14px;outline:none;font:11px Consolas;letter-spacing:1px">
+  <button onclick="runCyberSearch()" style="border:1px solid #00eaff;background:#05090d;color:#00eaff;padding:10px 14px;cursor:pointer;font:11px Consolas">SEARCH</button>
+</div>
+
+<div id="cyberSearchResult" style="display:none;position:fixed;top:68px;left:50%;transform:translateX(-50%);z-index:14999;width:min(520px,80%);background:#05090d;border:1px solid #263b44;padding:15px;color:#718792;font:11px Consolas"></div><script>
+function runCyberSearch(){
+  var input=document.getElementById("cyberSearchInput").value.toLowerCase().trim();
+  var result=document.getElementById("cyberSearchResult");
+
+  var pages={
+    projects:"#projects",
+    lab:"#lab",
+    terminal:"#terminal",
+    hideout:"#hideout",
+    tools:"#tools",
+    store:"#store",
+    about:"#about",
+    connect:"#connect",
+    mixora:"#projects",
+    calculator:"#tools",
+    "password generator":"#tools",
+    "color lab":"#tools",
+    "text lab":"#tools"
+  };
+
+  if(!input){
+    result.style.display="block";
+    result.textContent="ENTER A SEARCH TERM.";
+    return;
+  }
+
+  var found=null;
+
+  Object.keys(pages).forEach(function(key){
+    if(!found && key.indexOf(input)!==-1) found=pages[key];
+  });
+
+  if(found){
+    result.style.display="block";
+    result.innerHTML="TARGET FOUND — OPENING <span style='color:#00ff9d'>"+input.toUpperCase()+"</span>...";
+    setTimeout(function(){
+      document.querySelector(found).scrollIntoView({behavior:"smooth"});
+      result.style.display="none";
+    },700);
+  }else{
+    result.style.display="block";
+    result.textContent="NO MATCH FOUND IN CYBERLEGEND.";
+  }
+}
+
+document.getElementById("cyberSearchInput").addEventListener("keydown",function(e){
+  if(e.key==="Enter") runCyberSearch();
+});
+</script><div id="cyberNotification">
+  <div id="cyberNotificationTitle">SYSTEM MESSAGE</div>
+  <div id="cyberNotificationText">SYSTEM ONLINE</div>
+</div><script>
+(function(){
+var box=document.getElementById("cyberNotification");
+var title=document.getElementById("cyberNotificationTitle");
+var text=document.getElementById("cyberNotificationText");
+if(!box)return;
+
+window.cyberNotify=function(message){
+  text.textContent=message;
+  box.classList.add("show");
+
+  setTimeout(function(){
+    box.classList.remove("show");
+  },3500);
+};
+
+setTimeout(function(){
+  cyberNotify("CYBERLEGEND SYSTEM ONLINE");
+},2500);
+
+setTimeout(function(){
+  cyberNotify("ALL DIGITAL MODULES READY");
+},8000);
+
+setTimeout(function(){
+  cyberNotify("CYBER LAB CONNECTION ACTIVE");
+},14000);
+
+})();
+</script><div id="performancePanel" style="position:fixed;bottom:18px;left:18px;width:250px;background:#05090d;border:1px solid rgba(0,234,255,.3);padding:15px;z-index:11000;box-shadow:0 0 25px rgba(0,234,255,.1)">
+  <div style="color:#00eaff;font:9px Consolas;letter-spacing:2px;margin-bottom:12px">SYSTEM PERFORMANCE</div>
+
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;color:#718792;font:9px Consolas">
+      <span>CPU</span><span id="cpuValue">--%</span>
+    </div>
+    <div style="height:4px;background:#16242b;margin-top:5px">
+      <div id="cpuBar" style="height:100%;width:0%;background:#00eaff"></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;color:#718792;font:9px Consolas">
+      <span>MEMORY</span><span id="memoryValue">--%</span>
+    </div>
+    <div style="height:4px;background:#16242b;margin-top:5px">
+      <div id="memoryBar" style="height:100%;width:0%;background:#00ff9d"></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;color:#718792;font:9px Consolas">
+      <span>NETWORK</span><span id="networkValue">--%</span>
+    </div>
+    <div style="height:4px;background:#16242b;margin-top:5px">
+      <div id="networkBar" style="height:100%;width:0%;background:#b36cff"></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #16242b;padding-top:10px;color:#00ff9d;font:9px Consolas">
+    UPTIME: <span id="cyberUptime">00:00:00</span>
+  </div>
+</div><script>
+(function(){
+var cpu=document.getElementById("cpuValue");
+var memory=document.getElementById("memoryValue");
+var network=document.getElementById("networkValue");
+var cpuBar=document.getElementById("cpuBar");
+var memoryBar=document.getElementById("memoryBar");
+var networkBar=document.getElementById("networkBar");
+var uptime=document.getElementById("cyberUptime");
+
+if(!cpu)return;
+
+var start=Date.now();
+
+function updatePerformance(){
+  var c=Math.floor(15+Math.random()*70);
+  var m=Math.floor(25+Math.random()*55);
+  var n=Math.floor(5+Math.random()*85);
+
+  cpu.textContent=c+"%";
+  memory.textContent=m+"%";
+  network.textContent=n+"%";
+
+  cpuBar.style.width=c+"%";
+  memoryBar.style.width=m+"%";
+  networkBar.style.width=n+"%";
+
+  var seconds=Math.floor((Date.now()-start)/1000);
+  var h=Math.floor(seconds/3600);
+  var min=Math.floor((seconds%3600)/60);
+  var s=seconds%60;
+
+  uptime.textContent=
+    String(h).padStart(2,"0")+":"+
+    String(min).padStart(2,"0")+":"+
+    String(s).padStart(2,"0");
+}
+
+updatePerformance();
+setInterval(updatePerformance,2000);
+})();
+</script><div id="themePanel" style="position:fixed;top:95px;right:18px;width:260px;background:#05090d;border:1px solid rgba(0,234,255,.35);padding:18px;z-index:11000;box-shadow:0 0 30px rgba(0,234,255,.12);display:none">
+  <div style="color:#00eaff;font:10px Consolas;letter-spacing:2px;margin-bottom:15px">CYBER THEME CONTROL</div>
+
+  <label style="display:flex;justify-content:space-between;align-items:center;color:#91a5af;font:10px Consolas;margin-bottom:14px">
+    NEON INTENSITY
+    <input id="neonRange" type="range" min="20" max="100" value="75" style="width:110px">
+  </label>
+
+  <label style="display:flex;justify-content:space-between;align-items:center;color:#91a5af;font:10px Consolas;margin-bottom:14px">
+    ANIMATIONS
+    <input id="animationToggle" type="checkbox" checked>
+  </label>
+
+  <label style="display:flex;justify-content:space-between;align-items:center;color:#91a5af;font:10px Consolas;margin-bottom:14px">
+    GRID
+    <input id="gridToggle" type="checkbox" checked>
+  </label>
+
+  <label style="display:flex;justify-content:space-between;align-items:center;color:#91a5af;font:10px Consolas;margin-bottom:18px">
+    CYBER GLOW
+    <input id="glowToggle" type="checkbox" checked>
+  </label>
+
+  <button id="resetTheme" style="width:100%;padding:9px;background:#081219;border:1px solid #17404b;color:#00eaff;font:10px Consolas;cursor:pointer">
+    RESET THEME
+  </button>
+</div>
+
+<button id="themeButton" style="position:fixed;top:95px;right:18px;width:42px;height:42px;background:#05090d;border:1px solid rgba(0,234,255,.4);color:#00eaff;font-size:18px;z-index:11001;cursor:pointer;box-shadow:0 0 18px rgba(0,234,255,.12)">
+  ⚙
+</button><script>
+(function(){
+var panel=document.getElementById("themePanel");
+var button=document.getElementById("themeButton");
+var neon=document.getElementById("neonRange");
+var animations=document.getElementById("animationToggle");
+var grid=document.getElementById("gridToggle");
+var glow=document.getElementById("glowToggle");
+var reset=document.getElementById("resetTheme");
+
+if(!panel || !button)return;
+
+button.onclick=function(){
+  panel.style.display=panel.style.display==="none"?"block":"none";
+};
+
+neon.oninput=function(){
+  var value=Number(neon.value);
+  document.documentElement.style.setProperty("--cyber-neon-alpha",String(value/100));
+};
+
+animations.onchange=function(){
+  document.documentElement.style.setProperty("--cyber-animation-state",animations.checked?"":"paused");
+};
+
+grid.onchange=function(){
+  document.body.style.backgroundImage=grid.checked
+    ?"linear-gradient(rgba(0,234,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,234,255,.035) 1px,transparent 1px)"
+    :"none";
+};
+
+glow.onchange=function(){
+  document.documentElement.style.setProperty("--cyber-glow-opacity",glow.checked?"1":"0");
+};
+
+reset.onclick=function(){
+  neon.value=75;
+  animations.checked=true;
+  grid.checked=true;
+  glow.checked=true;
+
+  document.documentElement.style.removeProperty("--cyber-neon-alpha");
+  document.documentElement.style.removeProperty("--cyber-animation-state");
+  document.documentElement.style.removeProperty("--cyber-glow-opacity");
+
+  document.body.style.backgroundImage="";
+};
+
+})();
+</script><script>
+(function(){
+    async function updateRealSystemMonitor(){
+        if(!window.cyberSystem)return;
+
+        try{
+            const data=await window.cyberSystem.getStats();
+
+            const cpu=document.getElementById("cpuValue");
+            const memory=document.getElementById("memoryValue");
+            const network=document.getElementById("networkValue");
+            const cpuBar=document.getElementById("cpuBar");
+            const memoryBar=document.getElementById("memoryBar");
+            const networkBar=document.getElementById("networkBar");
+            const uptime=document.getElementById("cyberUptime");
+
+            if(cpu){
+                cpu.textContent=data.cpu+"%";
+                cpuBar.style.width=Math.min(data.cpu,100)+"%";
+            }
+
+            if(memory){
+                memory.textContent=data.memory+"%";
+                memoryBar.style.width=Math.min(data.memory,100)+"%";
+            }
+
+            if(network){
+                const totalNetwork=data.networkRx+data.networkTx;
+                network.textContent=totalNetwork+" KB/s";
+                networkBar.style.width=Math.min(totalNetwork/10,100)+"%";
+            }
+
+            if(uptime){
+                const totalSeconds=Math.floor(data.uptime);
+                const h=Math.floor(totalSeconds/3600);
+                const m=Math.floor((totalSeconds%3600)/60);
+                const s=totalSeconds%60;
+
+                uptime.textContent=
+                    String(h).padStart(2,"0")+":"+
+                    String(m).padStart(2,"0")+":"+
+                    String(s).padStart(2,"0");
+            }
+        }catch(error){
+            console.error("System monitor error:",error);
+        }
+    }
+
+    updateRealSystemMonitor();
+    setInterval(updateRealSystemMonitor,2000);
+})();
+</script><section id="requestCenter" style="padding:80px 20px;background:rgba(2,7,12,.96);border-top:1px solid rgba(0,234,255,.15)">
+  <div style="max-width:900px;margin:auto">
+    <div style="color:#00eaff;font:10px Consolas;letter-spacing:3px;margin-bottom:12px">CYBER HIDEOUT // PROJECT INTAKE</div>
+    <h2 style="font:700 38px Consolas;color:#f2fbff;margin:0 0 10px">TURN YOUR IDEA INTO REALITY</h2>
+    <p style="color:#718792;font:13px Consolas;line-height:1.7;margin-bottom:30px">
+      Have an idea for a website, app, tool, design or digital project?
+      Send the concept to CYBERLEGEND.
+    </p>
+
+    <div style="background:#05090d;border:1px solid rgba(0,234,255,.22);padding:25px;box-shadow:0 0 35px rgba(0,234,255,.06)">
+      <form id="cyberProjectForm">
+
+        <label style="display:block;color:#8fa6b0;font:10px Consolas;letter-spacing:1px;margin-bottom:7px">YOUR NAME</label>
+        <input id="clientName" required placeholder="Enter your name" style="width:100%;box-sizing:border-box;padding:13px;background:#081017;border:1px solid #18313a;color:#eaffff;font:12px Consolas;margin-bottom:18px;outline:none">
+
+        <label style="display:block;color:#8fa6b0;font:10px Consolas;letter-spacing:1px;margin-bottom:7px">CONTACT</label>
+        <input id="clientContact" required placeholder="Email or phone/WhatsApp" style="width:100%;box-sizing:border-box;padding:13px;background:#081017;border:1px solid #18313a;color:#eaffff;font:12px Consolas;margin-bottom:18px;outline:none">
+
+        <label style="display:block;color:#8fa6b0;font:10px Consolas;letter-spacing:1px;margin-bottom:7px">PROJECT TYPE</label>
+        <select id="clientType" required style="width:100%;box-sizing:border-box;padding:13px;background:#081017;border:1px solid #18313a;color:#eaffff;font:12px Consolas;margin-bottom:18px;outline:none">
+          <option value="">SELECT PROJECT TYPE</option>
+          <option>Website</option>
+          <option>Web App</option>
+          <option>Desktop App</option>
+          <option>Mobile App</option>
+          <option>Design</option>
+          <option>Media Tool</option>
+          <option>Other</option>
+        </select>
+
+        <label style="display:block;color:#8fa6b0;font:10px Consolas;letter-spacing:1px;margin-bottom:7px">PROJECT IDEA</label>
+        <textarea id="clientIdea" required placeholder="Explain what you want me to create..." rows="6" style="width:100%;box-sizing:border-box;padding:13px;background:#081017;border:1px solid #18313a;color:#eaffff;font:12px Consolas;margin-bottom:18px;outline:none;resize:vertical"></textarea>
+
+        <button type="submit" style="width:100%;padding:14px;background:#07161d;border:1px solid #00eaff;color:#00eaff;font:700 11px Consolas;letter-spacing:2px;cursor:pointer">
+          TRANSMIT PROJECT REQUEST →
+        </button>
+
+      </form>
+
+      <div id="requestSuccess" style="display:none;text-align:center;padding:35px 10px">
+        <div style="font-size:35px;color:#00ff9d;margin-bottom:15px">✓</div>
+        <div style="color:#00ff9d;font:700 14px Consolas;letter-spacing:2px">REQUEST TRANSMITTED</div>
+        <p style="color:#718792;font:11px Consolas;line-height:1.7;margin-top:12px">
+          Your project idea has been received by CYBERLEGEND.
+        </p>
+        <button onclick="cyberNewRequest()" style="margin-top:15px;padding:10px 18px;background:#081219;border:1px solid #17404b;color:#00eaff;font:10px Consolas;cursor:pointer">
+          SEND ANOTHER REQUEST
+        </button>
+      </div>
+    </div>
+  </div>
+</section><script>
+(function(){
+  var form=document.getElementById("cyberProjectForm");
+  var success=document.getElementById("requestSuccess");
+  if(!form)return;
+
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    var request={
+      id:Date.now(),
+      name:document.getElementById("clientName").value,
+      contact:document.getElementById("clientContact").value,
+      type:document.getElementById("clientType").value,
+      idea:document.getElementById("clientIdea").value,
+      status:"NEW",
+      date:new Date().toISOString()
+    };
+
+    var requests=JSON.parse(localStorage.getItem("cyberProjectRequests")||"[]");
+    requests.push(request);
+    localStorage.setItem("cyberProjectRequests",JSON.stringify(requests));
+
+    form.style.display="none";
+    success.style.display="block";
+  });
+
+  window.cyberNewRequest=function(){
+    form.reset();
+    success.style.display="none";
+    form.style.display="block";
+  };
+})();
+</script><script>
+(function(){
+    const CYBER_SUPABASE_URL="https://lzgswozdlbzpdzpsyusy.supabase.co";
+    const CYBER_SUPABASE_KEY="sb_publishable_DwR4H2PBf3nOv3pJHjzeeg_zxVZxOKS";
+
+    const form=document.querySelector("#requestCenter form");
+    if(!form)return;
+
+    form.addEventListener("submit",async function(e){
+        e.preventDefault();
+
+        const name=document.getElementById("clientName")?.value.trim();
+        const contact=document.getElementById("clientContact")?.value.trim();
+        const type=document.getElementById("clientType")?.value;
+        const idea=document.getElementById("clientIdea")?.value.trim();
+
+        if(!name || !contact || !type || !idea){
+            alert("Please complete all project request fields.");
+            return;
+        }
+
+        try{
+            const response=await fetch(
+                CYBER_SUPABASE_URL+"/rest/v1/project_requests",
+                {
+                    method:"POST",
+                    headers:{
+                        "Content-Type":"application/json",
+                        "apikey":CYBER_SUPABASE_KEY,
+                        "Authorization":"Bearer "+CYBER_SUPABASE_KEY,
+                        "Prefer":"return=minimal"
+                    },
+                    body:JSON.stringify({
+                        name:name,
+                        contact:contact,
+                        project_type:type,
+                        idea:idea,
+                        status:"NEW"
+                    })
+                }
+            );
+
+            if(!response.ok){
+                throw new Error(await response.text());
+            }
+
+            alert("PROJECT REQUEST TRANSMITTED SUCCESSFULLY.");
+            form.reset();
+
+        }catch(error){
+            console.error("Supabase request error:",error);
+            alert("REQUEST FAILED. Please try again.");
+        }
+    });
+})();
+</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
